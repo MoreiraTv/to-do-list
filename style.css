@@ -54,7 +54,9 @@ section{
 }
 
 .newTodo{
-    height: 30vh;
+    min-height: 190px;
+    height: 26vh;
+    min-width: 355px;
 }
 
 .newTodo > form {
@@ -72,16 +74,20 @@ section{
 }
 .newTodo > form > input#title {
     height: 5vh;
+    min-width: 250px;
 }
 
 .newTodo > form > input#desc {
     height: 10vh;
+    min-width: 250px;
 }
 
 .newTodo > form > input.submit {
     border: 0;
     height: 3vh;
     width: 5vw;
+    min-width: 50px;
+    min-height: 25px;
     align-self: flex-end;
     margin-right: 10vw;
     background-color: #ff666a;
@@ -90,6 +96,7 @@ section{
 .contentToDo{
     display: flex;
     flex-direction: column;
+    min-width: 355px;
     min-height: 30vh;
     align-items: center;
     justify-content: flex-start;
