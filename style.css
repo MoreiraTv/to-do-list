@@ -1,0 +1,89 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #ff666a;
+}
+
+nav{
+    height: 70px;
+    width: 100vw;
+    background-color: rgba(124, 124, 124, 0.533);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-nav{
+    width: 100vw;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.title > h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #FFFF;
+}
+
+.circle-perfil{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FFFF;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section{
+    margin-top: 3vh;
+    width: 50vw;
+    border-radius: 10px;
+    background-color: #FFFF;
+}
+
+.newTodo{
+    height: 30vh;
+}
+
+.newTodo > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.newTodo > form > input {
+    border: 2px solid #ff666a;
+    border-radius: 10px;
+    width: 30vw;
+    margin-top: 2vh;
+}
+.newTodo > form > input#title {
+    height: 5vh;
+}
+
+.newTodo > form > input#desc {
+    height: 10vh;
+}
+
+.newTodo > form > input.submit {
+    border: 0;
+    height: 5vh;
+    width: 5vw;
+}
+
+.contentToDo{
+    height: 30vh;
+}
