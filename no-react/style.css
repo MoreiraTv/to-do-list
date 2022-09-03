@@ -23,8 +23,11 @@ nav {
     justify-content: center;
 }
 
-.title>h1 {
+.title {
     color: #FFFF;
+    font-weight: 600;
+    font-size: 32px;
+    text-decoration: none;
 }
 
 .title:hover {
@@ -35,7 +38,7 @@ nav {
     position: absolute;
     top: 10px;
     left: 10px;
-    /* background-color: #FFFF; */
+    background-color: #fff;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -43,34 +46,54 @@ nav {
     justify-content: center;
     justify-items: center;
     align-items: center;
-    background-image: url("https://cdn-icons-png.flaticon.com/512/16/16467.png");
-    background-image: url("src/imgs/users.png");
+    background-repeat: no-repeat, repeat-x;
+    background-size: 50px 50px;
+    background-position: center center; 
 }
 
 .circle-perfil:hover,
 .circle-perfil:focus {
-  transform: translateX(80px) translateY(80px) scale(4);
-  border-radius: 5%;
-  justify-content: flex-start;
-  justify-items: flex-start;
-  align-items: flex-start;
-  
+    transform: translateX(100px) translateY(100px) scale(5);
+    border-radius: 5%;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+    background-size: 0;
+    background-position: left top; 
+    cursor: inherit;
 }
 
-.circle-perfil:hover {
-    cursor: pointer;
+.content-menu{
+    margin-top: 3px;
+    width: 95%;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-menu > a{
+    margin-top: 3px;
+    color: #1c1c1c;
+    text-decoration: none;
 }
 
 .img-user{
-    position: relative;
-    width: 35px;
-    height: 35px;
+    width: 50px;
 }
 
-.img-user:not(:focus):hover {
-    transform: scale(1);
+.circle-perfil:hover .content-menu{
+    visibility: visible;
+    font-size: 4px;
 }
-
+.circle-perfil:hover .img-user{
+    /* position: absolute;
+    left: 25%; */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
 
 .content {
     display: flex;
