@@ -25,6 +25,7 @@ function App() {
             Descrição Da Tarefa Aqui, Descrição Da Tarefa Aqui, 
             Descrição Da Tarefa Aqui."
             done={false}
+            // color="#f8f"
           />
 
           <ToDo
