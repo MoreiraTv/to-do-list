@@ -48,7 +48,7 @@ nav {
   align-items: center;
   background-repeat: no-repeat, repeat-x;
   background-size: 50px 50px;
-  background-position: center center; 
+  background-position: center center;
 }
 
 .circle-perfil:hover,
@@ -59,11 +59,11 @@ nav {
   justify-items: flex-start;
   align-items: flex-start;
   background-size: 0;
-  background-position: left top; 
+  background-position: left top;
   cursor: inherit;
 }
 
-.content-menu{
+.content-menu {
   margin-top: 3px;
   width: 95%;
   visibility: hidden;
@@ -73,21 +73,22 @@ nav {
   flex-direction: column;
 }
 
-.content-menu > a{
+.content-menu>a {
   margin-top: 3px;
   color: #1c1c1c;
   text-decoration: none;
 }
 
-.img-user{
+.img-user {
   width: 50px;
 }
 
-.circle-perfil:hover .content-menu{
+.circle-perfil:hover .content-menu {
   visibility: visible;
   font-size: 4px;
 }
-.circle-perfil:hover .img-user{
+
+.circle-perfil:hover .img-user {
   /* position: absolute;
   left: 25%; */
   width: 20px;
@@ -212,7 +213,7 @@ hr {
   color: #BCBCBC;
 }
 
-.btn-trash{
+.btn-trash {
   position: relative;
   left: 15%;
   margin-top: -5%;
@@ -221,8 +222,26 @@ hr {
   align-self: end;
 }
 
-.btn-trash:hover{
+.btn-trash:hover {
   cursor: pointer;
   fill: red;
   fill: red;
+}
+
+.to-do > .X {
+  border-radius: 5px;
+  position: relative;
+}
+
+.to-do.done > .X:after {
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\274c"; /* use the hex value here... */
+  font-size: 120px; 
+  color: #FFF;
+  line-height: 100px;
+  text-align: center;
 }
