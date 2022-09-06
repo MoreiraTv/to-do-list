@@ -1,5 +1,6 @@
 import Navbar from "./components/navbar.js";
 import ToDo from "./components/todo.js";
+import Db from './utils/db.js'
 
 import "./App.css";
 
@@ -19,22 +20,19 @@ function App() {
         </section>
 
         <section className="contentToDo">
-          <ToDo
-            title="Title do to-do 2"
-            descricao="Descrição Da Tarefa Aqui, 
-            Descrição Da Tarefa Aqui, Descrição Da Tarefa Aqui, 
-            Descrição Da Tarefa Aqui."
-            done={false}
-            // color="#f8f"
-          />
 
-          <ToDo
-            title="Title do to-do 1"
-            descricao="Descrição Da Tarefa Aqui, Descrição Da Tarefa Aqui, Descrição Da
-            Tarefa Aqui, Descrição Da Tarefa Aqui."
-            done={true}
-          />
-
+          {
+            Db.map((todo) => (
+              <>
+             <ToDo 
+              title={todo.title}
+              descricao={todo.description}
+              done={todo.done}
+              id={todo.id}
+              />
+              </>
+            ))
+          }
         </section>
       </main>
       <section></section>

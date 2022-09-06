@@ -1,17 +1,22 @@
 import ButtonTrash from "../imgs/buttonTrash";
+import Db from '../utils/db.js';
 
 
-const handleClickTrash = (e) =>{
+const handleClickTrash = (id, e) =>{
   e.preventDefault();
-  console.log("Teste");
+  var array = Db.filter((item) => item.id !== id);
+  
+  var element = document.getElementById(`${id}`)
+  element.parentNode.removeChild(element)
+  console.log(array);
 }
 
 function ToDo(props) {
   return (
     <>
       {props.done !== true ? (
-        <div className="to-do">
-          <a className="btn-trash" onClick={handleClickTrash}>
+        <div className="to-do" id={props.id}>
+          <a className="btn-trash" onClick={((e) => handleClickTrash(props.id, e))}>
             <ButtonTrash color={props.color} className="btn-trash" />
           </a>
           <label>{props.title}</label>
@@ -19,8 +24,8 @@ function ToDo(props) {
           <p>{props.descricao}</p>
         </div>
       ) : (
-        <div className="to-do done">
-          <a className="btn-trash" onClick={handleClickTrash}>
+        <div className="to-do done" id={props.id}>
+          <a className="btn-trash" onClick={((e) => handleClickTrash(props.id, e))}>
             <ButtonTrash className="btn-trash" color={props.color} />
           </a>
           <label>{props.title}</label>
