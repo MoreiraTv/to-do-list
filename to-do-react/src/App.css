@@ -215,10 +215,12 @@ hr {
   position: relative;
   flex-direction: coolumn;
 }
+.buttonsAbsolute {
+  position: absolute;
+  flex-direction: coolumn;
+}
 
 .btn-trash {
-  position: absolute;
-  right: -1.7vw;
   top: -1vh;
   height: 30px;
   width: 30px;
@@ -231,11 +233,7 @@ hr {
 }
 
 .btn-done {
-  position: absolute;
-  right: -3.5vw;
-  top: 11vh;
-  height: 30px;
-  width: 30px;
+
 }
 
 .btn-done:hover {
