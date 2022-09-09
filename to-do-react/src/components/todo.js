@@ -59,22 +59,24 @@ function ToDo(props) {
             <IconDone />
           </div>
           <div className="buttonsTodo">
-            <a
-              className="btn-trash"
-              onClick={(e) => handleClickTrash(props.id, e)}
-              href
-            >
-              <ButtonTrash color={props.color} className="btn-trash" />
-            </a>
-          </div>
-          <div className="buttonsTodo">
-            <a
-              className="btn-done"
-              onClick={(e) => handleClickDone(props.id, e)}
-              href
-            >
-              <ButtonDone color={props.color} className="btn-done" />
-            </a>
+            <div className="buttonsAbsolute">
+              <a
+                className="btn-trash"
+                onClick={(e) => handleClickTrash(props.id, e)}
+                href
+              >
+                <ButtonTrash color={props.color} className="btn-trash" />
+              </a>
+            </div>
+            <div className="btn-done buttonsAbsolute">
+              <a
+                className=""
+                onClick={(e) => handleClickDone(props.id, e)}
+                href
+              >
+                <ButtonDone color={props.color} className="btn-done" />
+              </a>
+            </div>
           </div>
           <label>{props.title}</label>
           <hr />

@@ -213,7 +213,9 @@ hr {
 
 .buttonsTodo {
   position: relative;
-  flex-direction: coolumn;
+  display: flex;
+  flex-direction: row-reverse;
+  right: -3.8vw;
 }
 .buttonsAbsolute {
   position: absolute;
@@ -221,9 +223,7 @@ hr {
 }
 
 .btn-trash {
-  top: -1vh;
-  height: 30px;
-  width: 30px;
+
 }
 
 .btn-trash:hover {
@@ -232,8 +232,8 @@ hr {
   fill: red;
 }
 
-.btn-done {
-
+.btn-done.buttonsAbsolute {
+  top: 8vh;
 }
 
 .btn-done:hover {
