@@ -215,7 +215,7 @@ hr {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
-  right: -3.8vw;
+  right: -3.2vw;
 }
 .buttonsAbsolute {
   position: absolute;
@@ -223,7 +223,7 @@ hr {
 }
 
 .btn-trash {
-
+  margin-top: -1.5vh;
 }
 
 .btn-trash:hover {
@@ -233,7 +233,7 @@ hr {
 }
 
 .btn-done.buttonsAbsolute {
-  top: 8vh;
+  margin-top: 10.5vh;
 }
 
 .btn-done:hover {

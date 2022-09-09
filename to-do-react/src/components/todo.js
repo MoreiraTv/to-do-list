@@ -40,8 +40,10 @@ function ToDo(props) {
               >
                 <ButtonTrash color={props.color} className="btn-trash" />
               </a>
+            </div>
+            <div className="btn-done buttonsAbsolute">
               <a
-                className="btn-done"
+                className=""
                 onClick={(e) => handleClickDone(props.id, e)}
                 href
               >
