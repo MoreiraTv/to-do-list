@@ -212,18 +212,21 @@ hr {
 }
 
 .buttonsTodo {
-  position: relative;
+  margin-top: 5%;
+  margin-bottom: -11%;
   display: flex;
-  flex-direction: row-reverse;
-  right: -3.2vw;
-}
-.buttonsAbsolute {
-  position: absolute;
-  flex-direction: coolumn;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .btn-trash {
-  margin-top: -1.5vh;
+  /* margin-left: -18%; */
+  margin-left: -1.6vw;
+}
+
+.btn-done{
+  margin-right: -3.2vw;
 }
 
 .btn-trash:hover {

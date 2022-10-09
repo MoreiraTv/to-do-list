@@ -1,10 +1,21 @@
+import { useEffect, useState } from "react";
 import Navbar from "./components/navbar.js";
 import ToDo from "./components/todo.js";
-import Db from './utils/db.js'
+// import Db from "./utils/db.js";
+import axios from "axios";
 
 import "./App.css";
 
+const baseUrl = "http://localhost:3333";
+
 function App() {
+  const [todos, setTodos] = useState([]);
+  useEffect(() => {
+    axios.get(`${baseUrl}/tasks`).then((res)=>{
+      setTodos(res.data.tasks);
+    });
+  }, []);
+  // console.log(todos);
   return (
     <>
       <header className="App-header">
@@ -20,19 +31,18 @@ function App() {
         </section>
 
         <section className="contentToDo">
-
-          {
-            Db.map((todo) => (
-              <>
-             <ToDo 
-              title={todo.title}
-              descricao={todo.description}
-              done={todo.done}
-              id={todo.id}
+          {todos.map((todo) => (
+            <>
+              <ToDo
+                id={todo.id}
+                title={todo.title}
+                description={todo.description}
+                status={todo.status}
+                done={todo.status === "done" ? true : false}
+                setTodos={setTodos}
               />
-              </>
-            ))
-          }
+            </>
+          ))}
         </section>
       </main>
       <section></section>

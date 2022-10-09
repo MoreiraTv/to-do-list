@@ -1,0 +1,7 @@
+const app = require('./app');
+require('dotenv').config();
+
+// eslint-disable-next-line no-undef
+const PORT = process.env.PORT || 3333;
+
+app.listen(PORT, () => console.log('server running or port 3333'));

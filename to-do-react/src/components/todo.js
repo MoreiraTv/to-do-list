@@ -1,25 +1,40 @@
 import ButtonTrash from "../imgs/buttonTrash";
 import ButtonDone from "../imgs/buttonDone";
 import IconDone from "../imgs/iconDone";
-import Db from "../utils/db.js";
+import axios from "axios";
 
-const handleClickTrash = (id, e) => {
+const baseUrl = "http://localhost:3333";
+
+const handleClickTrash = (id, setTodos, e) => {
   e.preventDefault();
-  var array = Db.filter((item) => item.id !== id);
+  axios.delete(`${baseUrl}/tasks/${id}`).then();
 
   var element = document.getElementById(`${id}`);
   element.parentNode.removeChild(element);
-  console.log(array);
 };
 
-const handleClickDone = (id, e) => {
+const handleClickDone = (todo, e) => {
   e.preventDefault();
-  var element = document.getElementById(`${id}`);
+  var element = document.getElementById(`${todo.id}`);
 
   if (element.classList.value.includes("done")) {
     element.classList.remove("done");
+    axios
+      .put(`${baseUrl}/tasks/${todo.id}`, {
+        title: todo.title,
+        description: todo.description,
+        status: "pendente",
+      })
+      .then();
   } else {
     element.classList.add("done");
+    axios
+      .put(`${baseUrl}/tasks/${todo.id}`, {
+        title: todo.title,
+        description: todo.description,
+        status: "done",
+      })
+      .then();
   }
 };
 
@@ -31,58 +46,52 @@ function ToDo(props) {
           <div className="X">
             <IconDone />
           </div>
-          <div className="buttonsTodo">
-            <div className="buttonsAbsolute">
-              <a
-                className="btn-trash"
-                onClick={(e) => handleClickTrash(props.id, e)}
-                href
-              >
-                <ButtonTrash color={props.color} className="btn-trash" />
-              </a>
-            </div>
-            <div className="btn-done buttonsAbsolute">
-              <a
-                className=""
-                onClick={(e) => handleClickDone(props.id, e)}
-                href
-              >
-                <ButtonDone color={props.color} className="btn-done" />
-              </a>
-            </div>
-          </div>
+
           <label>{props.title}</label>
           <hr />
-          <p>{props.descricao}</p>
+          <p>{props.description}</p>
+          <div className="buttonsTodo">
+            <a
+              className="btn-trash"
+              onClick={(e) => handleClickTrash(props.id, props.setTodos, e)}
+              href
+            >
+              <ButtonTrash color={props.color} className="btn-trash" />
+            </a>
+            <a
+              className="btn-done"
+              onClick={(e) => handleClickDone(props, e)}
+              href
+            >
+              <ButtonDone color={props.color} className="btn-done" />
+            </a>
+          </div>
         </div>
       ) : (
         <div className="to-do done" id={props.id}>
           <div className="X">
             <IconDone />
           </div>
-          <div className="buttonsTodo">
-            <div className="buttonsAbsolute">
-              <a
-                className="btn-trash"
-                onClick={(e) => handleClickTrash(props.id, e)}
-                href
-              >
-                <ButtonTrash color={props.color} className="btn-trash" />
-              </a>
-            </div>
-            <div className="btn-done buttonsAbsolute">
-              <a
-                className=""
-                onClick={(e) => handleClickDone(props.id, e)}
-                href
-              >
-                <ButtonDone color={props.color} className="btn-done" />
-              </a>
-            </div>
-          </div>
+
           <label>{props.title}</label>
           <hr />
-          <p>{props.descricao}</p>
+          <p>{props.description}</p>
+          <div className="buttonsTodo">
+            <a
+              className="btn-trash"
+              onClick={(e) => handleClickTrash(props.id, props.setTodos, e)}
+              href
+            >
+              <ButtonTrash color={props.color} className="btn-trash" />
+            </a>
+            <a
+              className="btn-done"
+              onClick={(e) => handleClickDone(props, e)}
+              href
+            >
+              <ButtonDone color={props.color} className="btn-done" />
+            </a>
+          </div>
         </div>
       )}
     </>
